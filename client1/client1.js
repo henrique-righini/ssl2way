@@ -9,7 +9,7 @@ var options = {
     cert: fs.readFileSync('client1-crt.pem'),
     ca: fs.readFileSync('ca-crt.pem'),
     rejectUnauthorized: false,
-    requestCert: false
+    requestCert: true
 };
 
 
