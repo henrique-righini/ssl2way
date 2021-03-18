@@ -36,6 +36,10 @@ for (let i = 0; i < 24; i++) {
                 req.method + ' ' + req.url +
                 "------------- \n");
 
+            res.on('data', function(data) {
+                process.stdout.write(data);
+            });
+
         } else {
             console.log("Server Errado \n")
             console.log("------------- \n")
@@ -49,9 +53,7 @@ for (let i = 0; i < 24; i++) {
                 "------------- \n");
         }
 
-        res.on('data', function(data) {
-            process.stdout.write(data);
-        });
+
     });
     req.end();
     req.on('error', function(e) {
